@@ -1,0 +1,10 @@
+.team {
+  position: absolute;
+  top: 20%;
+}
+.team.orange {
+  right: 16px;
+}
+.team.blue {
+  left: 16px;
+}

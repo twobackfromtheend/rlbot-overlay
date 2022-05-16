@@ -1,0 +1,52 @@
+.box {
+  width: 280px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #111111cc;
+  margin: 8px 0;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+}
+
+.box.spectating {
+  background-color: #ffffffcc;
+}
+
+.box.blue.spectating {
+  color: #007be6dd;
+  box-shadow: 0 0 8px 2px #3b79ffdd;
+}
+.box.orange.spectating {
+  color: #d04a07dd;
+  box-shadow: 0 0 8px 2px #ffa44add;
+}
+
+.player-name-boost {
+  @apply flex w-full justify-between gap-x-2;
+
+  /* font-family: "RalewayVariable"; */
+  font-family: "JetBrains MonoVariable";
+  font-weight: 800;
+}
+
+.player-name-boost .boost {
+  min-width: 3ch;
+}
+.blue .player-name-boost .boost {
+  text-align: right;
+}
+.orange .player-name-boost .boost {
+  text-align: left;
+}
+
+.box.orange .player-name-boost {
+  flex-direction: row-reverse;
+}
+
+.player-name-boost .is-boosting {
+  text-shadow: 0 0 1px #fffa, 0 0 3px #fffa, 0 0 5px #fffa;
+}

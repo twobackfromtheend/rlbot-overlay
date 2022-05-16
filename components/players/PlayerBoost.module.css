@@ -1,0 +1,26 @@
+.wrapper {
+  height: 6px;
+  border-radius: 3px;
+  background-color: #8885;
+  margin: 5px 0;
+  @apply flex w-full overflow-hidden duration-300;
+}
+
+.boost.blue .wrapper {
+  justify-content: flex-start;
+  box-shadow: 0 0 3px 0.3px #114dcfdd;
+}
+.boost.orange .wrapper {
+  justify-content: flex-end;
+  box-shadow: 0 0 3px 0.3px #d17417dd;
+}
+
+.progress {
+  height: 100%;
+}
+.boost.blue .progress {
+  background-image: linear-gradient(90deg, #114dcfdd, #1d60f0dd, #3b79ffdd);
+}
+.boost.orange .progress {
+  background-image: linear-gradient(-90deg, #d17417dd, #de7b1add, #ffa44add);
+}

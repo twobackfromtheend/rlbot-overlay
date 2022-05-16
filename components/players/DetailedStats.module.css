@@ -1,0 +1,6 @@
+.stats {
+  @apply flex justify-between;
+  font-family: "JetBrains MonoVariable";
+  font-size: 14px;
+  font-weight: 300;
+}
