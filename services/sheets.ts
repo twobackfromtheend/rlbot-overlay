@@ -24,18 +24,37 @@ interface SheetData {
   orangeFlavourText: string;
 }
 
-const DEFAULT_PROPS: Props<SheetData> = {
-  spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID!,
-  sheetName: process.env.NEXT_PUBLIC_SHEET_NAME!,
-  apiKey: process.env.NEXT_PUBLIC_API_KEY!,
+const DEFAULT_PROPS: Partial<Props<SheetData>> = {
+  spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
+  sheetName: process.env.NEXT_PUBLIC_SHEET_NAME,
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
   range: { start: "B2", end: "C3" },
   names: ["blueName", "blueFlavourText", "orangeName", "orangeFlavourText"],
 };
 
 const useProps = (): Props<SheetData> => {
   const router = useRouter();
-  const { key } = router.query as { key: string | undefined };
-  return { ...DEFAULT_PROPS, apiKey: key || DEFAULT_PROPS.apiKey };
+  const { spreadsheetId, sheetName, key } = router.query as {
+    spreadsheetId: string | undefined;
+    sheetName: string | undefined;
+    key: string | undefined;
+  };
+  return {
+    ...DEFAULT_PROPS,
+    spreadsheetId:
+      spreadsheetId ||
+      DEFAULT_PROPS.spreadsheetId ||
+      throwExpression("Missing spreadsheetId query param"),
+    sheetName:
+      sheetName ||
+      DEFAULT_PROPS.sheetName ||
+      throwExpression("Missing sheetName query param"),
+    apiKey:
+      key || DEFAULT_PROPS.apiKey || throwExpression("Missing key query param"),
+  } as Props<SheetData>;
+};
+const throwExpression = (errorMessage: string): never => {
+  throw new Error(errorMessage);
 };
 
 interface SheetsResponse {
