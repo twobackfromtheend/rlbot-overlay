@@ -24,15 +24,20 @@ interface SheetData {
   orangeFlavourText: string;
 }
 
-const DEFAULT_PROPS: Partial<Props<SheetData>> = {
+const DEFAULT_QUERY_PARAM_PROPS: Partial<
+  Pick<Props<SheetData>, "spreadsheetId" | "sheetName" | "apiKey">
+> = {
   spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
   sheetName: process.env.NEXT_PUBLIC_SHEET_NAME,
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
+};
+
+const DEFAULT_PROPS: Pick<Props<SheetData>, "range" | "names"> = {
   range: { start: "B2", end: "C3" },
   names: ["blueName", "blueFlavourText", "orangeName", "orangeFlavourText"],
 };
 
-const useProps = (): Props<SheetData> => {
+const useProps = () => {
   const router = useRouter();
   const { spreadsheetId, sheetName, key } = router.query as {
     spreadsheetId: string | undefined;
@@ -41,20 +46,10 @@ const useProps = (): Props<SheetData> => {
   };
   return {
     ...DEFAULT_PROPS,
-    spreadsheetId:
-      spreadsheetId ||
-      DEFAULT_PROPS.spreadsheetId ||
-      throwExpression("Missing spreadsheetId query param"),
-    sheetName:
-      sheetName ||
-      DEFAULT_PROPS.sheetName ||
-      throwExpression("Missing sheetName query param"),
-    apiKey:
-      key || DEFAULT_PROPS.apiKey || throwExpression("Missing key query param"),
-  } as Props<SheetData>;
-};
-const throwExpression = (errorMessage: string): never => {
-  throw new Error(errorMessage);
+    spreadsheetId: spreadsheetId || DEFAULT_QUERY_PARAM_PROPS.spreadsheetId,
+    sheetName: sheetName || DEFAULT_QUERY_PARAM_PROPS.sheetName,
+    apiKey: key || DEFAULT_QUERY_PARAM_PROPS.apiKey,
+  };
 };
 
 interface SheetsResponse {
@@ -65,8 +60,12 @@ interface SheetsResponse {
 
 export const useData = () => {
   const props = useProps();
+  const url =
+    props.spreadsheetId !== undefined && props.sheetName && props.apiKey
+      ? getUrl(props as Omit<Props<SheetData>, "names">)
+      : null;
 
-  const { data, error } = useSWR<SheetsResponse>(getUrl(props), fetcher, {
+  const { data, error } = useSWR<SheetsResponse>(url, fetcher, {
     refreshInterval: 3000,
   });
   const parsedData: Partial<SheetData> = {};
