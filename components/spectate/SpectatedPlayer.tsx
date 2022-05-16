@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useGameStateContext } from "../../contexts/GameStateContext";
 import { PlayerInfo } from "../../models/GameState";
 import SpectatedBoost from "./SpectatedBoost";
@@ -20,9 +21,14 @@ const SpectatedPlayer = () => {
   }
 
   return (
-    <>
+    <div
+      className={clsx(
+        "duration-300",
+        game_info.is_round_active ? "opacity-100" : "opacity-0"
+      )}
+    >
       <SpectatedBoost player={spectatedPlayer} />
-    </>
+    </div>
   );
 };
 
