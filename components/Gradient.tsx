@@ -16,7 +16,7 @@ const GradientComponent = (props: Props) => {
 
     // Call `initGradient` with the selector to your canvas
     gradient.initGradient(`#${props.id}`);
-  }, []);
+  }, [props.id]);
 
   return (
     <canvas

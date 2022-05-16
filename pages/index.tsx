@@ -31,8 +31,6 @@ const Home: NextPage = () => {
     );
   }, [mouseEntered]);
 
-  const data = useData();
-  console.log(data);
   return (
     <main className="flex h-0 min-h-screen items-center justify-center">
       <div className={clsx(styles.overlay, infoView && styles["info-view"])}>
@@ -54,12 +52,6 @@ const Home: NextPage = () => {
             <SpectatedPlayer />
           </GameStateContextProvider>
         </SocketContextProvider>
-        {/* <ScoreBug />
-      <PlayerStats />
-      <StatEvents />
-      <Minimap />
-      <BottomBar infoView={infoView} setInfoView={setInfoView} />
-      {infoView && <DebugInfo />} */}
       </div>
     </main>
   );
