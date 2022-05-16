@@ -51,7 +51,7 @@ export const useData = () => {
     refreshInterval: 3000,
   });
   const parsedData: Partial<SheetData> = {};
-  data?.values.flat().forEach((value, i) => {
+  data?.values?.flat().forEach((value, i) => {
     parsedData[props.names[i]] = value;
   });
 
