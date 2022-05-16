@@ -6,18 +6,21 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useRouter } from "next/router";
 
 const SocketContext = createContext<Socket | null | undefined>(undefined);
 
 export const SocketContextProvider = ({ children }: PropsWithChildren<{}>) => {
   const [socket, setSocket] = useState<Socket<any, never> | null>(null);
+  const router = useRouter();
+  const port = router.query.port || "8000";
   useEffect(() => {
-    const socket = io("localhost:8000");
+    const socket = io(`http://localhost:${port}`);
     setSocket(socket);
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [port]);
 
   return (
     <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>
