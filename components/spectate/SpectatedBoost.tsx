@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SpectatedBoost = ({ player }: Props) => {
-  const radius = 110;
+  const radius = 120;
   const stroke = 18;
   return (
     <div className={styles.boost}>
@@ -40,7 +40,7 @@ const SpectatedBoost = ({ player }: Props) => {
         </div>
       </div>
       <div className={clsx(styles.center, "pt-2 opacity-20 blur-sm")}>
-        <Image src={RLGym} width={radius * 1.2} height={radius * 1.2} />
+        <Image src={RLGym} width={radius * 1.1} height={radius * 1.1} />
       </div>
       <div
         className={clsx(
@@ -48,7 +48,7 @@ const SpectatedBoost = ({ player }: Props) => {
           "pt-2 opacity-40 mix-blend-overlay blur-[2px]"
         )}
       >
-        <Image src={RLGym} width={radius * 1.2} height={radius * 1.2} />
+        <Image src={RLGym} width={radius * 1.1} height={radius * 1.1} />
       </div>
       <div className={styles.center}>
         <BoostCircle
