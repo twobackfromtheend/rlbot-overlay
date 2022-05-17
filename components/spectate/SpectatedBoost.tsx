@@ -1,15 +1,18 @@
+import Image from "next/image";
 import { PlayerInfo } from "../../models/GameState";
 import GradientComponent from "../Gradient";
 import BoostCircle from "./BoostCircle";
 import styles from "./SpectatedBoost.module.css";
+import RLGym from "../../assets/rlgym.webp";
+import clsx from "clsx";
 
 interface Props {
   player: PlayerInfo;
 }
 
 const SpectatedBoost = ({ player }: Props) => {
-  const radius = 80;
-  const stroke = 12;
+  const radius = 90;
+  const stroke = 14;
   return (
     <div className={styles.boost}>
       <div className={styles.center}>
@@ -28,6 +31,17 @@ const SpectatedBoost = ({ player }: Props) => {
             color4="#550777"
           />
         </div>
+      </div>
+      <div className={clsx(styles.center, "pt-2 opacity-20 blur-sm")}>
+        <Image src={RLGym} width={radius * 1.2} height={radius * 1.2} />
+      </div>
+      <div
+        className={clsx(
+          styles.center,
+          "pt-2 opacity-40 mix-blend-overlay blur-[2px]"
+        )}
+      >
+        <Image src={RLGym} width={radius * 1.2} height={radius * 1.2} />
       </div>
       <div className={styles.center}>
         <BoostCircle
