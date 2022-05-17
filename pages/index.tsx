@@ -1,17 +1,14 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import GameBackground from "../assets/game-background.webp";
 import clsx from "clsx";
 import ScoreBug from "../components/ScoreBug";
-import "@fontsource/jetbrains-mono"; // Defaults to weight 400.
 import "@fontsource/jetbrains-mono/variable.css"; // Contains ONLY variable weights and no other axes.
 import { GameStateContextProvider } from "../contexts/GameStateContext";
 import PlayerStats from "../components/players/PlayerStats";
 import { SocketContextProvider } from "../contexts/SocketContext";
-import { useData } from "../services/sheets";
 import Debug from "../components/debug/Debug";
 import SpectatedPlayer from "../components/spectate/SpectatedPlayer";
 
