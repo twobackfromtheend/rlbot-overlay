@@ -1,5 +1,5 @@
 .boost {
-  @apply absolute bottom-4 right-4;
+  @apply absolute bottom-8 right-8;
   width: 240px;
   height: 240px;
 }
@@ -9,7 +9,7 @@
 }
 
 .text {
-  font-size: 36px;
+  font-size: 48px;
   font-family: JetBrains MonoVariable;
   text-shadow: 0 0 3px #000a, 0 0 3px #000a, 0 0 4px #000a, 0 0 6px #000a;
 }

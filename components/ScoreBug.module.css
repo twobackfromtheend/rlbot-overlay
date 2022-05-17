@@ -1,15 +1,8 @@
 .score-bug {
   @apply absolute top-0 flex items-stretch duration-1000;
-  /* position: absolute; */
-  /* top: 0; */
-  font-size: 32px;
-  /* display: flex;
-  align-items: stretch; */
-  /* font-family: "RalewayVariable"; */
-  /* font-family: "JetBrains Mono"; */
+  font-size: 42px;
   font-family: "JetBrains MonoVariable";
   font-weight: 800;
-  /* background-color: #111111cc; */
 }
 .score-bug .timer {
   /* font-feature-settings: "lnum"; */
@@ -30,19 +23,19 @@
   @apply absolute;
   bottom: -1.5em;
   font-size: 0.35em;
+  font-weight: 600;
   background-color: #111111aa;
   border-bottom: #000000aa solid 3px;
   padding: 0.1em 0.5em;
-  font-weight: 600;
 }
 
 .score-bug .score {
   /* font-feature-settings: "lnum"; */
-  font-size: 24px;
+  font-size: 28px;
   min-width: 48px;
-  padding-top: 2px;
-  padding-bottom: 4px;
-  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 48px;
   @apply relative z-30 flex items-center justify-center;
   text-shadow: 0 0 3px #000a, 0 0 3px #000a, 0 0 4px #000a, 0 0 6px #000a;
 }
@@ -97,9 +90,9 @@
 }
 
 .score-bug .team {
-  @apply relative px-4;
+  @apply relative mt-1 px-4;
   font-weight: 900;
-  min-width: 240px;
+  min-width: 360px;
   text-align: center;
   font-variant-caps: all-petite-caps;
 }
@@ -113,7 +106,7 @@
 .score-bug .team .name {
   /* @apply w-full whitespace-nowrap text-gray-100 mix-blend-color-dodge; */
   @apply w-full whitespace-nowrap text-gray-100;
-  font-size: 32px;
+  font-size: 36px;
   text-shadow: 0 0 3px #000a, 0 0 3px #000a, 0 0 15px #000a;
   /* -webkit-text-stroke: 5px black;
   paint-order: stroke fill; */
@@ -142,7 +135,7 @@
 .score-bug .team .flavour {
   @apply absolute inset-0 bottom-0 translate-y-full pt-2;
   text-shadow: 0 0 3px #000a, 0 0 3px #000a, 0 0 4px #000a, 0 0 6px #000a;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1em;
   font-weight: 700;
 }

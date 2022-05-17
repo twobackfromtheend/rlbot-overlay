@@ -11,11 +11,18 @@ interface Props {
 }
 
 const SpectatedBoost = ({ player }: Props) => {
-  const radius = 90;
-  const stroke = 14;
+  const radius = 110;
+  const stroke = 18;
   return (
     <div className={styles.boost}>
       <div className={styles.center}>
+        <div
+          className="absolute overflow-hidden rounded-full bg-black/50"
+          style={{
+            width: radius * 2 - stroke * 2 - stroke,
+            height: radius * 2 - stroke * 2 - stroke,
+          }}
+        />
         <div
           className="relative overflow-hidden rounded-full opacity-50"
           style={{

@@ -15,7 +15,7 @@ const BoostCircle = ({ amount, radius, stroke }: Props) => {
     <svg height={radius * 2} width={radius * 2}>
       <circle
         className={styles.circle}
-        stroke="#6407aa33"
+        stroke="#6407aa99"
         // fill="#0006"
         fill="transparent"
         strokeWidth={stroke}
@@ -25,7 +25,7 @@ const BoostCircle = ({ amount, radius, stroke }: Props) => {
       />
       <circle
         className={styles.circle}
-        stroke="#6407aa"
+        stroke="#9562ed"
         fill="transparent"
         strokeWidth={stroke}
         strokeDasharray={circumference + " " + circumference}
