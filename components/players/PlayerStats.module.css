@@ -1,5 +1,6 @@
 .team {
-  position: absolute;
+  @apply absolute flex flex-col gap-y-4;
+  /* position: absolute; */
   top: 20%;
 }
 .team.orange {

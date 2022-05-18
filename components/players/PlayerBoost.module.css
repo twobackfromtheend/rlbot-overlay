@@ -2,7 +2,7 @@
   height: 8px;
   border-radius: 4px;
   background-color: #8885;
-  margin: 5px 0;
+  margin: 8px 0;
   @apply flex w-full overflow-hidden duration-300;
 }
 

@@ -1,19 +1,15 @@
 .box {
+  @apply flex flex-col flex-wrap items-stretch;
   width: 320px;
   font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: stretch;
-  background-color: #111111cc;
-  margin: 8px 0;
-  padding: 5px 12px;
+  background-color: #111111dd;
+  padding: 6px 12px;
   text-transform: uppercase;
   border-radius: 0.3em;
 }
 
 .box.spectating {
-  background-color: #ffffffcc;
+  background-color: #ffffffdd;
 }
 
 .box.blue.spectating {

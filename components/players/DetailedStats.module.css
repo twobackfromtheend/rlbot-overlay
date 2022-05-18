@@ -1,5 +1,5 @@
 .stats {
-  @apply flex justify-between;
+  @apply flex items-center justify-between;
   font-family: "JetBrains MonoVariable";
   font-size: 16px;
   font-weight: 600;
