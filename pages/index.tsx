@@ -11,6 +11,7 @@ import PlayerStats from "../components/players/PlayerStats";
 import { SocketContextProvider } from "../contexts/SocketContext";
 import Debug from "../components/debug/Debug";
 import SpectatedPlayer from "../components/spectate/SpectatedPlayer";
+import Beta from "../components/beta/Beta";
 
 const Home: NextPage = () => {
   const [infoView, setInfoView] = useState(false);
@@ -47,6 +48,7 @@ const Home: NextPage = () => {
             <ScoreBug />
             <PlayerStats />
             <SpectatedPlayer />
+            <Beta />
           </GameStateContextProvider>
         </SocketContextProvider>
       </div>
