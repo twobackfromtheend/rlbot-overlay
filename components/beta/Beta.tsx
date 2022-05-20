@@ -108,13 +108,19 @@ const Beta = () => {
         : [orangeDataset, blueDataset], // Order so smaller dataset is after, to fix stroke going behind fill
   };
 
+  const orangeIsBetter = orangeGoals > blueGoals;
+  const probabilityOrangeIsBetter =
+    betaCDF(blueGoals + 1, orangeGoals + 1) * 100;
   return (
     <div className={styles.beta}>
       <Line options={options} data={data} />
       <div className={styles.text}>
-        Prob. blue is better:{" "}
-        {(100 - betaCDF(blueGoals + 1, orangeGoals + 1) * 100).toFixed(1)}%
-        (!beta)
+        Prob. {orangeIsBetter ? "orange" : "blue"} is better:{" "}
+        {(orangeIsBetter
+          ? probabilityOrangeIsBetter
+          : 100 - probabilityOrangeIsBetter
+        ).toFixed(1)}
+        % (!beta)
       </div>
     </div>
   );
