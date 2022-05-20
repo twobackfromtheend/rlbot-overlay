@@ -6,10 +6,9 @@
 }
 .score-bug .timer {
   /* font-feature-settings: "lnum"; */
-  padding: 3px 14px;
+  padding: 3px 18px;
   padding-bottom: 4px;
-
-  /* min-width: 3em; */
+  height: 60px;
   @apply relative flex items-center justify-center;
 }
 
@@ -17,6 +16,7 @@
   /* @apply relative z-20 text-gray-100 mix-blend-screen; */
   @apply relative z-20;
   text-shadow: 0 0 3px #000a, 0 0 4px #000a, 0 0 6px #000a;
+  font-size: 32px;
 }
 
 .score-bug .overtime {
@@ -31,10 +31,10 @@
 
 .score-bug .score {
   /* font-feature-settings: "lnum"; */
-  font-size: 28px;
+  font-size: 32px;
   min-width: 48px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
   height: 48px;
   @apply relative z-30 flex items-center justify-center;
   text-shadow: 0 0 3px #000a, 0 0 3px #000a, 0 0 4px #000a, 0 0 6px #000a;
@@ -90,11 +90,12 @@
 }
 
 .score-bug .team {
-  @apply relative mt-1 px-4;
+  @apply relative mt-2 px-4;
   font-weight: 900;
   min-width: 360px;
   text-align: center;
   font-variant-caps: all-petite-caps;
+  height: 64px;
 }
 
 .score-bug .team div {
